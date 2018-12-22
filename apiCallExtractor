@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for D in *; do
+        cd "$D"
+        echo $D
+	grep -r 'Landroid.*;->.*(' . | grep -o 'Landroid.*(' | sed 's/.$//' > temp.txt
+	grep -r 'Ljava.*;->.*(' . | grep -o 'Ljava.*(' | sed 's/.$//' >> temp.txt
+	grep -r 'Ljavax.*;->.*(' . | grep -o 'Ljava.*(' | sed 's/.$//' >> temp.txt
+	awk '!x[$0]++' temp.txt > apiCalls.txt
+	cd ..
+done

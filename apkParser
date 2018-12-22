@@ -1,0 +1,12 @@
+#!/bin/bash
+
+for apk in *.apk; do
+  apkname=$(basename "$apk")
+  apkname="${apkname%.*}"
+  var=$(echo $apkname | awk -F"-" '{print $1,$2,$3}')   
+  set -- $var
+  outputFile=output/$1;
+
+  apktool d $apk -o $outputFile
+done
+
