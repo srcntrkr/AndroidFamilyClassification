@@ -1,7 +1,7 @@
 from sklearn.model_selection import train_test_split
 from pandas import read_csv
 from sklearn.metrics import accuracy_score
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 
 filename = 'allFeatures.csv'
@@ -17,10 +17,10 @@ X_train_full,X_test_full,Y_train,Y_test = train_test_split(X,Y,stratify=Y,test_s
 
 feat_labels=dataframe.columns[1:]
 
-LR=LogisticRegression(penalty='l2',C=0.1,random_state=0)
-LR.fit(X_train_full, Y_train)
+forest=RandomForestClassifier(n_estimators=10000,random_state=0,n_jobs=-1)
+forest.fit(X_train_full, Y_train)
 
-importances = LR.feature_importances_
+importances = forest.feature_importances_
 indices = np.argsort(importances)[::-1]
 
 X_extracted=X_full[:,indices[0:1000]]
