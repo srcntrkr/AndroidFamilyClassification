@@ -15,8 +15,6 @@ Y=list(Y_full)
 
 X_train_full,X_test_full,Y_train,Y_test = train_test_split(X,Y,stratify=Y,test_size=0.5,random_state=0)
 
-feat_labels=dataframe.columns[1:]
-
 forest=RandomForestClassifier(n_estimators=10000,random_state=0,n_jobs=-1)
 forest.fit(X_train_full, Y_train)
 
