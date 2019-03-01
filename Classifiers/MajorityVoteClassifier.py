@@ -8,7 +8,7 @@ from sklearn.pipeline import_name_estimators
 
 class MajorityVoteClassifier(BaseEstimator, ClassifierMixin):
    
-    def__init__(self,classifiers,vote='classlabel',weights=[8,1,1]):
+    def__init__(self,classifiers,vote='classlabel',weights=[1,1,1]):
 	self.classifiers = classifiers
 	self.named_classifiers = {key: value for key, value in _name_estimators(classifiers)}
 	self.vote = vote
