@@ -1,4 +1,6 @@
-This is the repository for our malware family classification system.
+This is the repository for our malware family classification system, which is introduced on our paper: 
+
+Sercan Türker, Ahmet Burak Can, AndMFC: Android Malware Family Classification Framework, IEEE 30th Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC) Workshops - W4: Workshop on Machine Learning for Security and Cryptography: ML4SeC, 2019.
 
 The repository contains some scripts and programs that parses Android applications, extracts features and classifies Android malwares into their families.
 
